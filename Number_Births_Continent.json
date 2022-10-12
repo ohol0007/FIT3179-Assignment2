@@ -1,0 +1,22 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 450,
+  "data": {
+    "url": "https://raw.githubusercontent.com/ohol0007/FIT3179/main/data/FIT3179%20Assignment%202%20Data.csv"
+  },
+  "transform": [
+    {"filter": "datum.Number_Births >0"}
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "Continent"
+    },
+    "y":{
+      "field": "Number_Births",
+      "type": "quantitative",
+      "aggregate": "average"
+    }
+  }
+}
