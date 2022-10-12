@@ -1,0 +1,30 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 450,
+  "data": {
+    "url": "https://raw.githubusercontent.com/ohol0007/FIT3179/main/data/FIT3179%20Assignment%202%20Data.csv"
+  },
+  "transform": [
+    {"filter": "datum.GDP_Per_Captia>0"},
+    {"filter": "datum.Infant_Deaths >0"}
+  ],
+  "mark":"circle",
+  "encoding": {
+    "x": {
+      "field": "Life_Expectancy",
+      "scale": {
+        "type": "linear"
+      }
+    },
+    "y": {
+      "field": "Infant_Deaths",
+      "scale": {
+        "type": "log"
+      }
+    },
+    "color": {
+      "field": "Continent"
+    }
+  }
+}
