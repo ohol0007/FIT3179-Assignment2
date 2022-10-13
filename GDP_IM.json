@@ -15,13 +15,15 @@
       "field": "GDP_Per_Captia",
       "scale": {
         "type": "log"
-      }
+      },
+      "title": "GDP Per Capita"
     },
     "y": {
       "field": "Infant_Deaths",
       "scale": {
         "type": "log"
-      }
+      },
+      "title": "Number of Infant Deaths"
     },
     "color": {
       "field": "Continent"
