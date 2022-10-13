@@ -15,13 +15,15 @@
       "field": "Life_Expectancy",
       "scale": {
         "type": "linear"
-      }
+      },
+      "title": "Life Expectancy (Years)"
     },
     "y": {
       "field": "Infant_Deaths",
       "scale": {
         "type": "log"
-      }
+      },
+      "title" : "Infant Deaths"
     },
     "color": {
       "field": "Continent"
