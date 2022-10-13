@@ -17,7 +17,8 @@
       "field": "Infant_Deaths",
       "scale": {
         "type": "linear"
-      }
+      },
+      "title" : "Infant Deaths" 
     }
   }
 }
