@@ -26,7 +26,8 @@
     "y": {
       "field": "Infant_Deaths",
       "type": "quantitative",
-      "aggregate": "average"
+      "aggregate": "average",
+      "title": "Average Number of Infant Deaths"
     },
     "color": {
       "field": "Continent"
