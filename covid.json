@@ -1,0 +1,39 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 400,
+  "title": "Infant Mortality by Number of births",
+  "data":{
+    "url": "https://raw.githubusercontent.com/ohol0007/FIT3179/main/data/FIT3179%20Assignment%202%20Data.csv"
+  },
+  "transform": [
+    {"filter": "datum.Infant_Deaths >0"},
+    {"filter":"datum.Number_Births>0"},
+    {
+      "calculate": "datum.Infant_Deaths/datum.Number_Births*10000",
+      "as": "Infant Deaths per 10,000 Births"}
+  ],
+  "mark":"bar",
+  "encoding": {
+    "x":{
+      "field": "Pre_Covid",
+      "type": "nominal",
+      "axis": {
+        "labelExpr": "datum.label == 'N' ? 'Pre-Covid' : 'During Covid'",
+        "labelAngle": 0
+      },
+      "title": "Before or During Covid"
+    },
+    "y": {
+      "field": "Infant Deaths per 10,000 Births",
+      "aggregate": "average"
+    },
+    "xOffset": {"field": "Continent"},
+    "color": {"field": "Continent"},
+    "tooltip": [
+      {"field": "Continent", "type": "nominal"},
+      {"field": "Infant Deaths per 10,000 Births", "type": "quantitative", "format": ",.2f"}
+    ]
+  }
+}
+  
