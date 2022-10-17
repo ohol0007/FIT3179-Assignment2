@@ -21,7 +21,10 @@
   "encoding": {
     "x": {
       "field": "Year",
-      "type": "nominal"
+      "type": "nominal",
+      "axis": {
+        "labelAngle":0
+      }
       },
     "y": {
       "field": "Infant_Deaths",
