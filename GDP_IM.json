@@ -101,7 +101,7 @@
           {"field": "Year", "type": "nominal"},
           {"field": "Total_Population", "type": "quantitative", "format":",", "title": "Population"},
           {"field": "Infant_Deaths", "type": "quantitative","format": ",", "title": "Infant Deaths"},
-          {"field": "Number_Births", "type": "quantitative", "format": ",", "title": "Number of births"}
+          {"field": "GDP_Per_Captia", "type": "quantitative", "format": ",.2f", "title": "GDP Per Capita"}
         ]
       }
     },
