@@ -30,7 +30,19 @@
       "title": "Average Number of Infant Deaths"
     },
     "color": {
-      "field": "Continent"
+      "field": "Continent",
+      "type" : "nominal",
+      "scale": {
+            "domain": [
+              "North America",
+              "South America",
+              "Europe",
+              "Africa",
+              "Asia",
+              "Oceania"
+            ],
+            "range": ["#e41a1c","#377eb8","#4daf4a","#984ea3","#ff7f00","#ffff33"]
+      }
     },
     "opacity": {
       "condition": {"selection": "continent_highlight", "value": 0.8},
@@ -45,3 +57,4 @@
     ]
   }
 }
+
