@@ -1,22 +1,46 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 450,
-  "data": {
+  "height": 400,
+  "title": "Infant Mortality by Number of births",
+  "data":{
     "url": "https://raw.githubusercontent.com/ohol0007/FIT3179/main/data/FIT3179%20Assignment%202%20Data.csv"
   },
   "transform": [
-    {"filter": "datum.Number_Births >0"}
+    {"filter": "datum.Infant_Deaths >1"},
+    {"filter":"datum.Number_Births>0"}
   ],
-  "mark": "bar",
+  "selection": {
+    "continent_highlight": {
+      "type": "multi",
+      "fields": ["Continent"],
+      "bind": "legend"
+    }
+  },
+  "mark": "area",
   "encoding": {
     "x": {
-      "field": "Continent"
-    },
-    "y":{
-      "field": "Number_Births",
+      "field": "Year",
+      "type": "nominal"
+      },
+    "y": {
+      "field": "Infant_Deaths",
       "type": "quantitative",
       "aggregate": "average"
-    }
+    },
+    "color": {
+      "field": "Continent"
+    },
+    "opacity": {
+      "condition": {"selection": "continent_highlight", "value": 0.8},
+      "value": 0.2
+    },
+    "tooltip": [
+      {"field": "Continent", "type":"nominal"},
+      {"field": "Year", "type": "nominal"},
+      {"field": "Total_Population", "aggregate":"average", "title": "Population", "format": ",.0f"},
+      {"field": "Infant_Deaths", "aggregate":"average", "title": "Number of Infant Deaths", "format": ",.0f"},
+      {"field": "Number_Births", "aggregate":"average", "title": "Number of Births", "format": ",.0f"}
+    ]
   }
 }
