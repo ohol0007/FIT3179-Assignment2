@@ -96,7 +96,7 @@
             "range": ["#e41a1c","#377eb8","#4daf4a","#984ea3","#ff7f00","#ffff33"]
           }
         },
-        "opacity": {"value" : 0.6},
+        "opacity": {"value" : 0.7},
         "tooltip": [
           {"field": "Country_Name", "type": "nominal", "title": "Country"},
           {"field": "Year", "type": "nominal"},
